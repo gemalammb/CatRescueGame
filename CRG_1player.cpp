@@ -97,14 +97,14 @@ void one_player_mode::gameplay()
 
 
             // Game ends when stalemate achieved
-            /*if (checkforStalemate() == true) {
+            if (checkforStalemate() == true) {
                 std::cout << std::endl;
                 std::cout << "Foster care is full!" << std::endl;
                 std::cout << "You have found forever homes for " << ForeverHome << " cats! Well done!" << std::endl;
                 high_score(ForeverHome); /// see if player has created a high score!
                 std::cout << std::endl;
                 isDone = true;
-            }*/
+            }
         }
     }
 
