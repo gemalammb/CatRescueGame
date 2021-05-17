@@ -114,7 +114,7 @@ void two_player_mode::gameplay()
             }
 
             // stalemate conditions
-            /*if (checkforStalemate() == true) {
+            if (checkforStalemate() == true) {
                 std::cout << std::endl;
                 std::cout << "Foster care is full!" << std::endl;
                 std::cout << std::endl;
@@ -134,7 +134,7 @@ void two_player_mode::gameplay()
                     std::cout << std::endl;
                 }
                 isDone = true;
-            }*/
+            }
 
             // Switch players
             if (currentPlayer == player1) {
@@ -150,7 +150,6 @@ void two_player_mode::gameplay()
         }
     }
 }
-
 
 
 
