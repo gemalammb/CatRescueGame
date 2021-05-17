@@ -36,7 +36,11 @@ public:
     // initialise board 2 player
     virtual void clearFosterHome2Player();
     
+    // initialise board 2 player difficult
     virtual void clearFosterHome2PlayerDifficult();
+    
+    // stalemate conditions
+    virtual bool checkforStalemate();
     
     // get X co ord
     virtual int getXCoord();
