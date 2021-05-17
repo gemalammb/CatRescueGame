@@ -13,7 +13,7 @@ class Board
 public:
     // default constructor
     Board() = default;
-    // default destructor - virtual in case we decide to inherit from it
+    // default destructor - virtual
     virtual ~Board() = default;
 
 
