@@ -8,7 +8,7 @@
 
 
 // print foster home
-void FosterHome::printFosterHome()
+void Board::printFosterHome()
 {
 
     std::cout << std::endl;
@@ -26,9 +26,9 @@ void FosterHome::printFosterHome()
 
 }
 
-void FosterHome::clearFosterHome2Player()
+void Board::clearFosterHome2Player()
 {
-    //Empties the foster home
+    ////Empties the foster home
     for (int i = 0; i < 1; i++) {
         for (int j = 0; j < 4; j++) {
             board[i][j] = ' ';
@@ -74,8 +74,8 @@ void FosterHome::clearFosterHome2Player()
 
 }
 
-void FosterHome::clearFosterHome1Player() {
-    //Empties the foster home
+void Board::clearFosterHome1Player() {
+    ////Empties the foster home
     for (int i = 0; i < 1; i++) {
         for (int j = 0; j < 4; j++) {
             board[i][j] = ' ';
@@ -118,7 +118,7 @@ void FosterHome::clearFosterHome1Player() {
     board[2][2] = arrayCats4[RandIndex4];
 }
 
-void FosterHome::clearFosterHome2PlayerDifficult()
+void Board::clearFosterHome2PlayerDifficult()
 {
     //Empties the foster home
     for (int i = 0; i < 1; i++) {
@@ -221,7 +221,7 @@ void ForeverHome1Player::clearForeverHome_1player()
 //}
 
 // get coordinates from input
-int playing::getXCoord()
+int Board::getXCoord()
 {
     bool isInputBad = true;
 
@@ -242,7 +242,7 @@ int playing::getXCoord()
     return x - 1;
 }
 
-int playing::getYCoord()
+int Board::getYCoord()
 {
     bool isInputBad = true;
 
@@ -262,17 +262,19 @@ int playing::getYCoord()
     return y - 1;
 }
 
-bool playing::placeCat(int x, int y, char currentCat)
+bool Board::placeCat(int x, int y, char currentCat)
 {
     if (board[y][x] != ' ') {
         return false;
     }
 
-    board[y][x] = currentCat;
-    return true;
+    else {
+        board[y][x] = currentCat;
+        return true;
+    }
 }
 
-bool playing::checkFor4InARow(char currentCat) {
+bool Board::checkFor4InARow(char currentCat) {
 
    // rows
     for (int i = 0; i < 4; i++) {
@@ -289,7 +291,7 @@ bool playing::checkFor4InARow(char currentCat) {
     for (int i = 0; i < 4; i++) {
         if ((board[0][i] == currentCat) && (board[0][i] == board[1][i]) && (board[1][i] == board[2][i]) && (board[i][2] == board[i][3])) {
             for (int j = 0; j < 4; j++) {
-                board[i][j];
+                board[i][j] = ' ';
             }
 
             return true;
@@ -318,7 +320,7 @@ bool playing::checkFor4InARow(char currentCat) {
 
 }
 
-bool playing::checkForAdoption(char currentCat)
+bool Board::checkForAdoption(char currentCat)
 {
 
 
@@ -434,7 +436,7 @@ bool playing::checkForAdoption(char currentCat)
 }
 
 
-void playing::high_score(int ForeverHome) {
+void Board::high_score(int ForeverHome) {
 
     std::ifstream input("high_score.txt");
 
