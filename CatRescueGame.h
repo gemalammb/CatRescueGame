@@ -8,20 +8,48 @@
 
 // BOARD
 
-class board
+class Board
 {
 public:
+    // default constructor
+    Board() = default;
+    // default destructor - virtual in case we decide to inherit from it
+    virtual ~Board() = default;
+
+
+    // actual board representation
     char board[4][4];
+
+    // print board
+    virtual void printFosterHome();
+    // initialise board 1 player
+    virtual void clearFosterHome1Player();
+    // initialise board 2 player difficult
+  
+    // check for adoption
+    virtual bool checkForAdoption(char currentCat);
+    virtual bool checkFor4InARow(char currentCat);
+   
+    // populate with mark
+    virtual bool placeCat(int x, int y, char currentCat);
+
+    // initialise board 2 player
+    virtual void clearFosterHome2Player();
+    
+    virtual void clearFosterHome2PlayerDifficult();
+    
+    // get X co ord
+    virtual int getXCoord();
+
+    // get Y co ord
+    virtual int getYCoord();
+    
+    // find high score
+    virtual void high_score(int ForeverHome);
+    
+
 };
 
-class FosterHome : board
-{
-public:
-    void printFosterHome();
-    void clearFosterHome1Player();
-    void clearFosterHome2Player();
-    void clearFosterHome2PlayerDifficult();
-};
 
 
 // FOREVER HOMES
@@ -52,23 +80,6 @@ public:
 
 
 
-// GENERAL
-
-class playing : board
-{
-public:
-    int getXCoord();
-    int getYCoord();
-    bool checkForAdoption(char currentCat);
-    bool checkFor4InARow(char currentCat);
-    void high_score(int ForeverHome);
-    bool placeCat(int x, int y, char currentCat);
-//    bool checkforStalemate();
-};
-
-
-
-
 
 
 
@@ -81,7 +92,7 @@ public:
     virtual void gameplay() = 0;
 };
 
-class one_player_mode : CatRescueGame, FosterHome, ForeverHome1Player, playing {
+class one_player_mode : CatRescueGame, Board, ForeverHome1Player {
 public:
     one_player_mode() {}
     ~one_player_mode() {}
@@ -89,14 +100,14 @@ public:
 
 };
 
-class two_player_mode : CatRescueGame, FosterHome, ForeverHome2Player, playing {
+class two_player_mode : CatRescueGame, Board, ForeverHome2Player {
 public:
     two_player_mode() {}
     ~two_player_mode() {}
     void gameplay();
 };
 
-class two_player_mode_diff : CatRescueGame, FosterHome, ForeverHome2Player, playing {
+class two_player_mode_diff : CatRescueGame, Board, ForeverHome2Player {
 public:
     two_player_mode_diff() {}
     ~two_player_mode_diff() {}
