@@ -204,21 +204,17 @@ void ForeverHome1Player::clearForeverHome_1player()
 }
 
 // stalemate conditions
-//bool stalemate::checkforStalemate()
-//{
-//    // check if none of squares are blank
-//    for (int i = 0; i < 4; i++) {
-//        for (int j = 0; j < 4; j++) {
-//            if (board[j][i] != ' ') {
-//                return true;
-//            }
-//            else {
-//                return false;
-//            }
-//
-//        }
-//    }
-//}
+bool Board::checkforStalemate()
+{
+    // check if none of squares are blank
+    if ((board[0][0] != ' ') && (board[0][1] != ' ') && (board[0][2] != ' ') && (board[0][3] != ' ') && (board[1][0] != ' ') && (board[1][1] != ' ') && (board[1][2] != ' ') && (board[1][3] != ' ') && (board[2][0] != ' ') && (board[2][1] != ' ') && (board[2][2] != ' ') && (board[2][3] != ' ') && (board[3][0] != ' ') && (board[3][1] != ' ') && (board[3][2] != ' ') && (board[3][3] != ' ')) {
+        return true;
+    }
+    else {
+        return false;
+    }
+
+}
 
 // get coordinates from input
 int Board::getXCoord()
